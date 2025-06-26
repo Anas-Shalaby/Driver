@@ -19,6 +19,7 @@ const authMiddleware = async (req, res, next) => {
       "SELECT * FROM users WHERE user_id = $1",
       [decoded.userId]
     );
+
     if (userResult.rows.length === 0) {
       return res
         .status(401)
