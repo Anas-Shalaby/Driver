@@ -7,6 +7,7 @@ dotenv.config();
 const authRoutes = require("./routes/auth");
 const passengersRoutes = require("./routes/passengers");
 const tripsRoutes = require("./routes/trips");
+const driverRoutes = require("./routes/driver");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/passengers", passengersRoutes);
 app.use("/api/v1/trips", tripsRoutes);
+app.use("/api/v1/drivers", driverRoutes);
 
 // Start server
 app.listen(port, () => {
